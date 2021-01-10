@@ -16,7 +16,7 @@ class PgClass:
     def create_table(self, table_dest, table_col_def, autocommit=True):
         self.connection.autocommit = autocommit
         # drop table
-        self.cursor.execute(f"""DROP TABLE IF EXISTS {table_dest}""")
+        self.cursor.execute(f"""DROP TABLE IF EXISTS {table_dest};""")
         # create table
         create_table_q = f"""
         CREATE TABLE IF NOT EXISTS {table_dest}

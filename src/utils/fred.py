@@ -20,6 +20,7 @@ class FredClass:
             print(f'Fetch metric: {metric}')
             try:
                 metrics_df_sub = self.fred.get_series_latest_release(metric).to_frame()
+                # TODO: append first then reset_index?
                 metrics_df_sub.reset_index(drop=False, inplace=True)
                 metrics_df_sub.columns = ['activity_date', 'value']
                 metrics_df_sub['activity_date'] = metrics_df_sub.activity_date.dt.date
