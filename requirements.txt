@@ -1,0 +1,14 @@
+notebook
+numpy
+pandas
+requests
+scipy
+seaborn
+plotly
+pystan
+scikit-learn
+Quandl==3.5.3
+yfinance==0.1.55
+fredapi
+statsmodels
+fbprophet
