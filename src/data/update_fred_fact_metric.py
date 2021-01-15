@@ -16,6 +16,8 @@ fred_metric_list = ['T10YFF', 'DGS10','SP500', 'M2','UMCSENT',
 # fred_metric_list = ['GDP']
 start_date_dt = pd.to_datetime('1980-01-01')
 from_api=True
+recreate_table=False # TODO: also need to rerun update_fred_dim_metric if recreate_table is True
+
 if from_api:
     fred = FredClass(FRED_API)
     # get metric info
@@ -33,17 +35,18 @@ else:
 table_dest = 'fred.fact_metric'
 pg_conn = PgClass(DATABASE_DB, DATABASE_USER, DATABASE_PW, DATABASE_HOST, DATABASE_PORT)
 
-# # ###############
-# # create table #
-# # ###############
-# table_col_def = """
-#     metric character varying(255) NOT NULL,
-#     activity_date date NOT NULL,
-#     value numeric,
-#     PRIMARY KEY (metric, activity_date)
-#
-#             """
-# pg_conn.create_table(table_dest, table_col_def)
+# ###############
+# create table #
+# ###############
+if recreate_table:
+    table_col_def = """
+        metric character varying(255) NOT NULL,
+        activity_date date NOT NULL,
+        value numeric,
+        PRIMARY KEY (metric, activity_date)
+    
+                """
+    pg_conn.create_table(table_dest, table_col_def)
 
 # ################
 # # insert records

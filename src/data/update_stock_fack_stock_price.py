@@ -7,9 +7,11 @@ from src.utils.yahoofinance import YfClass
 
 # collect fred data
 stock_price_list = ['JPM','GS', 'C', 'NIO', 'TSM', 'NVDA',
-                    'VOX', 'VCR', 'VDC', 'VDE', 'VFH', 'VHT', 'VIS', 'VGT', 'VAW', 'VNQ', 'VPU']
+                    'VOX', 'VCR', 'VDC', 'VDE', 'VFH', 'VHT', 'VIS', 'VGT', 'VAW', 'VNQ', 'VPU',
+                    'QQQ']
 period = 'max' # when use 1d, it'll generate duplicate records, so don't use 1d
 from_api = True
+recreate_table = False
 
 if from_api:
     # get ticker prices from yahoo finance api
@@ -25,22 +27,23 @@ else:
 table_dest = 'stock.fact_stock_price'
 pg_conn = PgClass(DATABASE_DB, DATABASE_USER, DATABASE_PW, DATABASE_HOST, DATABASE_PORT)
 
-# # ###############
-# # create table #
-# # ###############
-# table_col_def = """
-#     ticker character varying(10) NOT NULL,
-#     activity_date date NOT NULL,
-#     open numeric,
-#     high numeric,
-#     low numeric,
-#     close numeric,
-#     volume numeric,
-#     dividends numeric,
-#     stock_splits numeric,
-#     PRIMARY KEY (ticker, activity_date)
-#             """
-# pg_conn.create_table(table_dest, table_col_def)
+# ###############
+# create table #
+# ###############
+if recreate_table:
+    table_col_def = """
+        ticker character varying(10) NOT NULL,
+        activity_date date NOT NULL,
+        open numeric,
+        high numeric,
+        low numeric,
+        close numeric,
+        volume numeric,
+        dividends numeric,
+        stock_splits numeric,
+        PRIMARY KEY (ticker, activity_date)
+                """
+    pg_conn.create_table(table_dest, table_col_def)
 
 # ################
 # # insert records
