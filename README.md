@@ -17,7 +17,7 @@ source market_analysis/bin/activate
     * [Install TeX](https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex)
     * create path
     ```export PATH=$PATH:/Library/TeX/texbin```
-    * when create PDF from Jupyter Notebook, use ```jupyter nbconvert --to pdf no-input notebooks/ts_leading_metric_impact_on_sectors.ipynb ```
+    * when create PDF from Jupyter Notebook, use ```jupyter nbconvert --to pdf no-input notebooks/ts_leading_metric_impact_on_sectors.ipynb```
     * [More info about nbconvert](https://nbconvert.readthedocs.io/en/latest/config_options.html)
     
 Project Organization
