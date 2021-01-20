@@ -60,12 +60,14 @@ Project Organization
 Set Environment
 --------
 1. Create virtual environment
+```
 python3 -m venv market_analysis
-
+```
 2. Activate environment
+```
 source market_analysis/bin/activate
-
+```
 3. Explort Jupter Notebook as PDF
-** [Install TeX](https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex)
-** create path
-export PATH=$PATH:/Library/TeX/texbin
+ ** [Install TeX](https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex)
+ ** create path
+```export PATH=$PATH:/Library/TeX/texbin```
