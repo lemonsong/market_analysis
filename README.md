@@ -3,6 +3,21 @@ market_analysis
 
 data and analysis about stocks and business cycle
 
+Set Environment
+--------
+1. Create virtual environment
+```
+python3 -m venv market_analysis
+```
+2. Activate environment
+```
+source market_analysis/bin/activate
+```
+3. Explort Jupter Notebook as PDF
+    * [Install TeX](https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex)
+    * create path
+    ```export PATH=$PATH:/Library/TeX/texbin```
+
 Project Organization
 ------------
 
@@ -57,17 +72,4 @@ Project Organization
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
 
 
-Set Environment
---------
-1. Create virtual environment
-```
-python3 -m venv market_analysis
-```
-2. Activate environment
-```
-source market_analysis/bin/activate
-```
-3. Explort Jupter Notebook as PDF
-    * [Install TeX](https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex)
-    * create path
-    ```export PATH=$PATH:/Library/TeX/texbin```
+
