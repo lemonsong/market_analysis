@@ -55,9 +55,17 @@ Project Organization
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+
+Set Environment
 --------
 # Create virtual environment
 python3 -m venv market_analysis
 
 # Activate environment
 source market_analysis/bin/activate
+
+# Explort Jupter Notebook as PDF
+## [Install TeX](https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex)
+## create path
+export PATH=$PATH:/Library/TeX/texbin
