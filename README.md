@@ -13,7 +13,11 @@ python3 -m venv market_analysis
 ```
 source market_analysis/bin/activate
 ```
-3. Export Jupter Notebook as PDF
+3. Install environment
+```
+pip install -r requirements.txt
+```
+4. Export Jupter Notebook as PDF
     * [Install TeX](https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex)
     * create path
     ```export PATH=$PATH:/Library/TeX/texbin```

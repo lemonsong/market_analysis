@@ -6,9 +6,11 @@ from src.utils.yahoofinance import YfClass
 
 
 # collect fred data
-stock_price_list = ['JPM','GS', 'C', 'NIO', 'TSM', 'NVDA',
+stock_price_list = ['JPM','GS', 'C', 'NIO', 'TSM', 'NVDA', 'EPD', 'AMD','BA','BABA','DAL','LMND','MA','MSFT','SNOW',
                     'VOX', 'VCR', 'VDC', 'VDE', 'VFH', 'VHT', 'VIS', 'VGT', 'VAW', 'VNQ', 'VPU',
-                    'QQQ', 'VOO', 'VO', 'VB']
+                    'QQQ', 'VOO', 'VTV', 'VIGAX', 'VO', 'VB', 'VGK']
+
+
 period = 'max' # when use 1d, it'll generate duplicate records, so don't use 1d
 from_api = True
 recreate_table = False

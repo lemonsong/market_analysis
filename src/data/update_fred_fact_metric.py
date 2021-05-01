@@ -16,7 +16,7 @@ fred_metric_list = ['M2', 'T10YFF', 'DGS10','SP500', 'UMCSENT',
              'AWHMAN', 'AWHAETP', 'AWHAEMAN',
              'DTCDISA066MSFRBNY',
              'ICSA', 'NYICLAIMS', 'NJICLAIMS',
-             'MDSP', 'DRSFRMACBS', 'M0264AUSM500NNBR', 'BOGZ1FL153165106Q']
+             'MDSP', 'DRSFRMACBS', 'M0264AUSM500NNBR', 'BOGZ1FL153165106Q', 'DCOILWTICO']
 
 # fred_metric_list = ['GDP']
 start_date_dt = pd.to_datetime('1980-01-01')
@@ -55,7 +55,8 @@ if recreate_table:
 
 # ################
 # # insert records
-# ################
+
+
 
 # pg_conn.insert_data(table_dest, fred_metrics_df)
 

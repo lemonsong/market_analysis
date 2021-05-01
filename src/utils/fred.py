@@ -9,7 +9,7 @@ class FredClass:
         self.fred = Fred(api_key=FRED_API)
 
     def search(self, search_text):
-        self.search_df = self.fred.search("Delinquency Rate MORTGAGE")
+        self.search_df = self.fred.search(search_text)
         self.search_df['popularity'] = self.search_df['popularity'].astype(int)
         self.search_df = self.search_df.sort_values(by=['popularity'], ascending=False)
         return self.search_df
